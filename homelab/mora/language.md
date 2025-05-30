@@ -60,3 +60,24 @@ ad-hoc, as that is required for configuration through the wizard.
 for dynamic templating in the manager, it seems i can use go's `text/template`
 and possibly sprig for additional functions. that should give me everything i
 need for templating files dynamically for deployment. good to go :)
+
+## configuration variables
+
+so in the examples above, i mention `(config "variable_name")`. i think this
+will need to have its own special top-level block. something like
+
+```txt
+config "variable_name" {
+  name = "My human-readable variable";
+  help = "A longer piece of text that describes what this is and what it needs
+to do. Tokens can span multiple lines but idk if that will actually be used like
+it is here. URLs should also show up as links in the UI.";
+
+  secret = true;
+}
+```
+
+i think this is pretty important so that i can specify config variable info in a
+single centralized place. it should also give me the opportunity to like group
+together variables. for example, i would want to group together cloudflare api
+key and email in a single page to get them at the same time.
