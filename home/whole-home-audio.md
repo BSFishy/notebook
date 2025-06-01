@@ -34,3 +34,21 @@ a fun little extension of this will be speakers. most likely, the setup will be
 raspberry pis connected to a speaker, diy. it would be fun to also build the
 housing for the speaker out of wood and have a nice cohesive set of speakers
 that all sound nice and are synced with the rest of the home.
+
+another nice thing would be running a spotifyd instance alongside mopidy. that
+way i can connect with spotify connect and control the music playing from the
+native spotify app. the added benefit would be that anyone visiting my home can
+also just connect to the speaker in their spotify app and play whatever they
+want.
+
+with the better smart tv, this creates a little annoyance, because mopidy offers
+a websocket api to get info about the current media playing but spotifyd doesnt
+offer one out of the box. and i want the tv app to be able to support both
+streams.
+
+so the plan i have devised is to make use of mqtt to send pub/sub notifications
+about what is currently playing. it will most likely entail sending events from
+both mopidy and spotifyd (and anything else i may add at some point), collecting
+those events and sending a unified event that is "now playing" and listen for
+that event on the tv to know what is currently playing. that should give me the
+opportunity to mess around with mqtt along with all of this stuff.

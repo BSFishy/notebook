@@ -40,3 +40,14 @@ are painful. or something along those lines.
 but yeah the plan is to build some custom language that eventually compiles into
 some skin for kodi so that i can build the skin quickly, efficiently, and maybe
 provide a tool to the community for building better skins faster :shrug:
+
+i _could_ do all that but also apparently kodi exposes some backend api. so what
+i also could do is use a small, simple wm, start a custom application first,
+tell the wm to focus the correct application, then it can call out to kodi or
+steamlink.
+
+this will give me full control over what it looks like and i can build a web ui
+using tauri or something similar. so it should be pretty good. there are cec
+libraries for rust, and it should offer me the best of both worlds i think. if i
+build it well, i should be able to tell the wm pretty well what window to show
+and when.
