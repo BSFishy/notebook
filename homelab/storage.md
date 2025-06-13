@@ -21,6 +21,11 @@ pretty large. it should allow me to start with one node, expand to more in the
 future, expand to use a nas, and backup to an offsite backup all with native k8s
 pvcs.
 
+additionally, longhorn should provide me with the functionality i need to backup
+and restore when doing safe deployments. i'll need to see about how i can
+implement all this in a storage backend agnostic way, maybe making a global
+setting in the runway dashboard or something?
+
 in the further future, i may expand to rook + ceph for a super duper balls to
 the walls insane storage setup that should be faster, more fault tolerant, and
 overall better, but that will also be a huge undertaking and something that i
